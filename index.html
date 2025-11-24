@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jalsa Q & A Game</title>
+
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script defer src="./js/app.js" ></script>
+    
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=exit_to_app" />
+    
+     
+</head>
+
+<header>
+
+ <h1>Jalsa Q & A Game</h1>
+
+</header>
+
+<body>
+
+    <div class="start-form">
+
+    <input id="player1-input" type="text" placeholder="Player 1 name" >
+
+    <input id="player2-input" type="text" placeholder="Player 2 name" >
+
+    <div class="timer-box">
+
+      <span id="timerdisplay">1</span>s
+
+      <button id="minusBtn">-</button>
+
+      <button id="plusBtn">+</button>
+
+    </div>
+
+    <label for="categories">Choose Catagories : </label>
+
+     <select name="categories" multiple id="categories" >
+
+     <option value="science">Science</option>
+     
+     <option value="cars">Cars</option>
+
+     <option value="flags">Flags</option>
+
+   </select>
+    
+   <button id="start-btn" type="button">Play</button>
+
+</div>
+
+
+
+<div class="game-view">
+
+<button type="button" ><i class="material-symbols-outlined">exit_to_app</i></button>
+
+<p>Turn:Player  
+          <span id="boredom-stat">1</span>
+        </p>
+<section class="question-wrapper">
+<p id="question"> What was the first car that has a seatbelt ?</p>
+</section>
+
+<section class="options-wrapper">
+    <button id="option1">option1</button>
+    
+    <button id="option2">option2</button>
+
+    <button id="option3">option3</button>
+
+    <button id="option4">option4</button>
+
+</section>
+
+<section class="answer-wrapper">
+<p id="answer-p">The Correct Answer is : <span id="correct-answer">...</span></p>
+</section>
+
+<section class="button-wrapper">
+
+
+    <button id="player1Btn">PLAYER 1</button>
+    
+    <button id="player2Btn">PLAYER 2</button>
+
+    <button id="noneplayerBtn">NONE</button>
+
+</section>
+
+
+
+
+</div>
+
+</body>
+</html>
+
