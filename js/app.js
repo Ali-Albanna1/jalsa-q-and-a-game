@@ -307,19 +307,5 @@ timeSetSub.addEventListener('click', subTimer)
 selectEl.addEventListener('change', selectedCategories) 
   
   
-  // (event) => {
-
-  // selectedCategories.length = 0
-
-  //  for (let i = 0; i < selectEl.options.length; i++) {
-
-  //       if (selectEl.options[i].selected) {
-
-  //         selectedCategories.push(selectEl.options[i].value);
-  //       }
-  //     }
-  //     console.log('Selected categories:', selectedCategories);
-  //   });
-
-
+  
 
