@@ -224,7 +224,7 @@ let chosenAnswer
 let correctAnswer
 
 const gameState = {
-    currentPlayer: 1,
+    currentPlayer: 0,
     player1Score: 0,
     player2Score: 0,
     currentQuestion: null,
@@ -289,6 +289,10 @@ const player1ScoreDisp = document.querySelector('#p1-score')
 
 const player2ScoreDisp = document.querySelector('#p2-score')
 
+const p1NameDisp = document.querySelector('#p1-name')
+
+const p2NameDisp = document.querySelector('#p2-name')
+
 
 
 
@@ -307,7 +311,13 @@ if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.lengt
     
     console.log(player1N  + ' ' + Player2N )
 
-    
+   gameState.currentPlayer = player1N
+
+   playerTurnDisp.textContent = player1N
+
+     p1NameDisp.textContent = player1N
+
+    p2NameDisp.textContent = Player2N
 }
 
 else {
@@ -463,7 +473,7 @@ correctAnswer = gameState.currentQuestion.answer
 if(chosenAnswer === correctAnswer){
 
   event.target.style.backgroundColor = 'green'
-  updateScore()
+  
 }
 
 else {
@@ -474,6 +484,8 @@ else {
    
 
 }
+   updateScore()
+
    disableOpBtn()
 
    switchTurn()
@@ -516,17 +528,18 @@ const resetOptions =() => {
 }
 
 const switchTurn = ()  => {
- if (gameState.currentPlayer === 1)
+ if (gameState.currentPlayer === player1N)
  {
-   gameState.currentPlayer = 2
-   playerTurnDisp.textContent = 2
+   gameState.currentPlayer = Player2N
+
+   playerTurnDisp.textContent = Player2N
  }
 
  else{
 
-    gameState.currentPlayer = 1
+    gameState.currentPlayer = player1N
 
-    playerTurnDisp.textContent = 1
+    playerTurnDisp.textContent = player1N
 
  }
 
@@ -536,7 +549,7 @@ const switchTurn = ()  => {
 const updateScore = () =>  {
   const points = getSelectedDifficultyPoints()
 
-  if (gameState.currentPlayer === 1) {
+  if (gameState.currentPlayer === player1N) {
 
     gameState.player1Score += points
 
