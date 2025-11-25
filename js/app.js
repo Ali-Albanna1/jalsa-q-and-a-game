@@ -208,6 +208,11 @@ const gameData = {
 
 const selectedValues = []
 
+const choosenCategories = []
+
+
+
+
 /* variables ---------------------------------------------------*/
 let player1N = ''
 
@@ -215,8 +220,14 @@ let Player2N = ''
 
 let timer = 1
 
-
-
+const gameState = {
+    currentPlayer: 1,
+    player1Score: 0,
+    player2Score: 0,
+    currentQuestion: null,
+    usedQuestions: [], 
+    isGameActive: false
+}
 
 
 
@@ -246,10 +257,27 @@ const playerTurnDisp = document.querySelector('#player-turn')
 const selectionList = document.querySelector('#choosen-categories')
 
 
-const answerEl = document.querySelector('#question')
+
+const questionDispEl = document.querySelector('#question')
 
 
+const radioEasyEl =document.querySelector('#level-choice1')
 
+const radioMedEl =document.querySelector('#level-choice2')
+
+const radioHardEl =document.querySelector('#level-choice3')
+
+
+const showQBtn = document.querySelector('#show-quesbtn')
+
+
+const option1El = document.querySelector('#option1')
+
+const option2El = document.querySelector('#option2')
+
+const option3El = document.querySelector('#option3')
+
+const option4El = document.querySelector('#option4')
 
 /* Functions ---------------------------------------------------*/
 
@@ -265,6 +293,7 @@ if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.lengt
     Player2N = player2Name.value
     
     console.log(player1N  + ' ' + Player2N )
+
     
 }
 
@@ -305,7 +334,7 @@ const selectedCategories =  () => {
 
           selectedValues.push(selectEl.options[i].value);
 
-            selectionList.appendChild(selectEl.options[i])
+           selectionList.appendChild(selectEl.options[i].cloneNode(true));
 
         }
       }
@@ -313,14 +342,55 @@ const selectedCategories =  () => {
 
     }
 
+ 
+    const getRandomCat = () => {
 
+      
+  const index = Math.floor(Math.random() * selectedValues.length);
 
+  return selectedValues[index];
+  
+}
     
 
 
+function getSelectedDifficulty() {
+    if (radioEasyEl.checked) { return 'easy'}
+
+     if (radioMedEl.checked) {return 'medium' }
+
+    if (radioHardEl.checked) {return 'hard'}
+
+   else{return 'easy'} 
+}
 
 
+const getQuestionForRound = () => {
+  const category = getRandomCat();
+  const difficulty = getSelectedDifficulty();
 
+  if (!
+    category) {
+    alert('Please choose at least one category');
+    return;
+  }
+
+  const questionList = gameData[category][difficulty];
+  const randomIndex = Math.floor(Math.random() * questionList.length);
+  const question = questionList[randomIndex];
+
+  questionDispEl.textContent = question.question; 
+
+  option1El.textContent = question.options[0]
+
+  option2El.textContent = question.options[1]
+
+  option3El.textContent = question.options[2]
+
+  option4El.textContent = question.options[3]
+
+  gameState.currentQuestion = question; 
+};
 
 
 
@@ -336,6 +406,6 @@ timeSetSub.addEventListener('click',subTimer)
 
 selectEl.addEventListener('change',selectedCategories) 
   
-  
+showQBtn.addEventListener('click',getQuestionForRound)
   
 
