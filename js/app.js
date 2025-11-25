@@ -212,13 +212,16 @@ const choosenCategories = []
 
 
 
-
 /* variables ---------------------------------------------------*/
 let player1N = ''
 
 let Player2N = ''
 
 let timer = 1
+
+let chosenAnswer
+
+let correctAnswer
 
 const gameState = {
     currentPlayer: 1,
@@ -278,6 +281,9 @@ const option2El = document.querySelector('#option2')
 const option3El = document.querySelector('#option3')
 
 const option4El = document.querySelector('#option4')
+
+
+const allOpButtons = [option1El, option2El, option3El, option4El]
 
 /* Functions ---------------------------------------------------*/
 
@@ -369,8 +375,7 @@ const getQuestionForRound = () => {
   const category = getRandomCat();
   const difficulty = getSelectedDifficulty();
 
-  if (!
-    category) {
+  if (!category) {
     alert('Please choose at least one category');
     return;
   }
@@ -390,7 +395,71 @@ const getQuestionForRound = () => {
   option4El.textContent = question.options[3]
 
   gameState.currentQuestion = question; 
+
+  resetOptions()
 };
+
+// the full question with the answer and options is stored in the gamestate.currentQuestion
+console.log(gameState)
+
+const handleAnswerOptions = (event) => {
+ 
+ chosenAnswer = event.target.textContent
+
+correctAnswer = gameState.currentQuestion.answer
+
+if(chosenAnswer === correctAnswer){
+
+  event.target.style.backgroundColor = 'green'
+}
+
+else {
+      
+   event.target.style.backgroundColor = 'red'
+   highlightCorrectOption(correctAnswer)
+   
+   
+
+}
+   disableOpBtn()
+
+} 
+
+const highlightCorrectOption = () => {
+
+allOpButtons 
+
+allOpButtons.forEach(button => {
+
+  if(button.textContent === correctAnswer){
+
+     button.style.backgroundColor = 'green'
+  }
+  
+})
+}
+
+const disableOpBtn = () => {
+    option1El.disabled = true
+
+     option2El.disabled = true
+
+      option3El.disabled = true
+
+       option4El.disabled = true
+    
+
+}
+
+const resetOptions =() => {
+  allOpButtons
+
+  allOpButtons.forEach(button => {
+    button.style.backgroundColor = ''
+    button.disabled = false
+  })
+}
+
 
 
 
@@ -408,4 +477,9 @@ selectEl.addEventListener('change',selectedCategories)
   
 showQBtn.addEventListener('click',getQuestionForRound)
   
+
+option1El.addEventListener('click', handleAnswerOptions)
+option2El.addEventListener('click', handleAnswerOptions)
+option3El.addEventListener('click', handleAnswerOptions)
+option4El.addEventListener('click', handleAnswerOptions)
 
