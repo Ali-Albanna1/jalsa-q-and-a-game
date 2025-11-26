@@ -6,14 +6,9 @@ const gameData = {
   history: {
     easy: [
       {
-        question: "What was the name of the crime boss who was head of the feared Chicago Outfit?",
-        answer: "Al Capone",
-        options: ["Al Capone", "Lucky Luciano", "John Dillinger", "Bugsy Siegel"]
-      },
-      {
-        question: "What Renaissance artist is buried in Rome's Pantheon?",
-        answer: "Raphael",
-        options: ["Michelangelo", "Raphael", "Leonardo da Vinci", "Donatello"]
+        question: "Who was the first President of the United States?",
+        answer: "George Washington",
+        options: ["George Washington", "Abraham Lincoln", "Thomas Jefferson", "John Adams"]
       },
       {
         question: "In what year did World War II end?",
@@ -21,19 +16,14 @@ const gameData = {
         options: ["1939", "1941", "1945", "1950"]
       },
       {
-        question: "Which famous historical document begins with the words 'We hold these truths to be self-evident'?",
-        answer: "The Declaration of Independence",
-        options: ["The Magna Carta", "The Declaration of Independence", "The Bill of Rights", "The Constitution"]
+        question: "Which famous ship sank in 1912?",
+        answer: "Titanic",
+        options: ["Titanic", "Britannic", "Olympic", "Lusitania"]
       },
       {
-        question: "Who was the first woman to win a Nobel Prize?",
-        answer: "Marie Curie",
-        options: ["Marie Curie", "Rosalind Franklin", "Ada Lovelace", "Dorothy Hodgkin"]
-      },
-      {
-        question: "What was the code name for the Allied invasion of Normandy?",
-        answer: "Operation Overlord",
-        options: ["Operation Torch", "Operation Overlord", "Operation Neptune", "Operation Barbarossa"]
+        question: "Who wrote the Declaration of Independence?",
+        answer: "Thomas Jefferson",
+        options: ["Thomas Jefferson", "Benjamin Franklin", "John Hancock", "James Madison"]
       }
     ],
     medium: [
@@ -48,26 +38,21 @@ const gameData = {
         options: ["Nicholas II", "Peter the Great", "Alexander III", "Ivan IV"]
       },
       {
-        question: "Roald Amundsen was the first man to reach the South Pole, but where was he from?",
-        answer: "Norway",
-        options: ["Sweden", "Norway", "Denmark", "Finland"]
-      },
-      {
-        question: "Who famously crossed the Alps with elephants on the way to war with the Romans?",
+        question: "Who famously crossed the Alps with elephants?",
         answer: "Hannibal",
         options: ["Hannibal", "Alexander the Great", "Attila the Hun", "Julius Caesar"]
       },
       {
-        question: "The Parthenon Marbles are controversially located in what museum?",
+        question: "The Parthenon Marbles are kept in which museum?",
         answer: "The British Museum",
         options: ["The Louvre", "The British Museum", "The Vatican Museums", "The Metropolitan Museum of Art"]
       }
     ],
     hard: [
       {
-        question: "Which powerful Mongol ruler conquered a vast empire stretching from Asia to Europe?",
-        answer: "Genghis Khan",
-        options: ["Kublai Khan", "Genghis Khan", "Tamerlane", "Attila the Hun"]
+        question: "Which empire was ruled by Genghis Khan?",
+        answer: "The Mongol Empire",
+        options: ["The Mongol Empire", "The Ottoman Empire", "The Persian Empire", "The Roman Empire"]
       },
       {
         question: "In what decade was the internet created?",
@@ -77,12 +62,12 @@ const gameData = {
       {
         question: "What was the name of the first computer virus?",
         answer: "Creeper",
-        options: ["ILOVEYOU", "Creeper", "Melissa", "Brain"]
+        options: ["Creeper", "ILOVEYOU", "Melissa", "Brain"]
       },
       {
-        question: "What was the name of the ancient Egyptian sun god?",
-        answer: "Ra",
-        options: ["Ra", "Osiris", "Anubis", "Horus"]
+        question: "Which war ended with the Treaty of Versailles?",
+        answer: "World War I",
+        options: ["World War I", "World War II", "Cold War", "Napoleonic Wars"]
       }
     ]
   },
@@ -90,14 +75,24 @@ const gameData = {
   science: {
     easy: [
       {
-        question: "How many elements are in the periodic table?",
-        answer: "118",
-        options: ["112", "114", "118", "120"]
+        question: "What gas do humans breathe in to survive?",
+        answer: "Oxygen",
+        options: ["Oxygen", "Carbon Dioxide", "Nitrogen", "Helium"]
       },
       {
         question: "Which planet is closest to the sun?",
         answer: "Mercury",
         options: ["Venus", "Mercury", "Earth", "Mars"]
+      },
+      {
+        question: "What is H2O commonly known as?",
+        answer: "Water",
+        options: ["Water", "Hydrogen", "Salt", "Oxygen"]
+      },
+      {
+        question: "How many planets are in the Solar System?",
+        answer: "8",
+        options: ["7", "8", "9", "10"]
       }
     ],
     medium: [
@@ -110,18 +105,38 @@ const gameData = {
         question: "Where is the strongest human muscle located?",
         answer: "Jaw",
         options: ["Jaw", "Leg", "Arm", "Back"]
+      },
+      {
+        question: "What force keeps us on the ground?",
+        answer: "Gravity",
+        options: ["Gravity", "Magnetism", "Friction", "Pressure"]
+      },
+      {
+        question: "What is the speed of light?",
+        answer: "299,792 km/s",
+        options: ["150,000 km/s", "299,792 km/s", "1,000,000 km/s", "30,000 km/s"]
       }
     ],
     hard: [
       {
-        question: "What theory explains the origin of the universe?",
-        answer: "The Big Bang Theory",
-        options: ["The Big Bang Theory", "String Theory", "Steady State Theory", "Quantum Loop Theory"]
+        question: "What is the powerhouse of the cell?",
+        answer: "Mitochondria",
+        options: ["Mitochondria", "Nucleus", "Ribosome", "Chloroplast"]
       },
       {
-        question: "What was the world's first artificial satellite?",
-        answer: "Sputnik 1",
-        options: ["Sputnik 1", "Explorer 1", "Voyager 1", "Apollo 11"]
+        question: "What is the chemical symbol for gold?",
+        answer: "Au",
+        options: ["Ag", "Au", "Go", "Gd"]
+      },
+      {
+        question: "What element has the highest melting point?",
+        answer: "Tungsten",
+        options: ["Tungsten", "Iron", "Carbon", "Platinum"]
+      },
+      {
+        question: "What particle has a positive charge?",
+        answer: "Proton",
+        options: ["Proton", "Electron", "Neutron", "Photon"]
       }
     ]
   },
@@ -137,6 +152,16 @@ const gameData = {
         question: "Which city is known as 'The Eternal City'?",
         answer: "Rome",
         options: ["Athens", "Rome", "Jerusalem", "Istanbul"]
+      },
+      {
+        question: "What is the largest continent?",
+        answer: "Asia",
+        options: ["Europe", "Asia", "Africa", "North America"]
+      },
+      {
+        question: "Which ocean is the largest?",
+        answer: "Pacific Ocean",
+        options: ["Pacific Ocean", "Atlantic Ocean", "Indian Ocean", "Arctic Ocean"]
       }
     ],
     medium: [
@@ -149,6 +174,16 @@ const gameData = {
         question: "Which country has the most islands?",
         answer: "Sweden",
         options: ["Indonesia", "Sweden", "Philippines", "Canada"]
+      },
+      {
+        question: "Which country is nicknamed 'The Land of Fire and Ice'?",
+        answer: "Iceland",
+        options: ["Iceland", "Greenland", "Norway", "Finland"]
+      },
+      {
+        question: "Which river is the longest in the world?",
+        answer: "Nile",
+        options: ["Amazon", "Nile", "Yangtze", "Mississippi"]
       }
     ],
     hard: [
@@ -161,6 +196,16 @@ const gameData = {
         question: "What is the only non-rectangular national flag?",
         answer: "Nepal",
         options: ["Switzerland", "Nepal", "Bhutan", "Vatican City"]
+      },
+      {
+        question: "What is the largest desert in the world?",
+        answer: "Antarctic Desert",
+        options: ["Sahara", "Gobi", "Arabian", "Antarctic Desert"]
+      },
+      {
+        question: "Which is the smallest country in the world?",
+        answer: "Vatican City",
+        options: ["Vatican City", "Monaco", "Nauru", "San Marino"]
       }
     ]
   },
@@ -176,34 +221,156 @@ const gameData = {
         question: "What does URL stand for?",
         answer: "Uniform Resource Locator",
         options: ["Uniform Resource Locator", "Universal Routing Link", "Unified Reference Line", "User Request Locator"]
+      },
+      {
+        question: "What device stores long-term data?",
+        answer: "Hard Drive",
+        options: ["RAM", "Hard Drive", "CPU", "GPU"]
+      },
+      {
+        question: "What does Wi-Fi allow you to do?",
+        answer: "Connect wirelessly to the internet",
+        options: [
+          "Connect wirelessly to the internet",
+          "Charge devices",
+          "Cool your PC",
+          "Increase battery life"
+        ]
       }
     ],
+
     medium: [
       {
         question: "What does HTTP stand for?",
         answer: "Hypertext Transfer Protocol",
-        options: ["Hypertext Transfer Protocol", "High-Tech Transfer Process", "Hyperlink Text Protocol", "Host Transfer Protocol"]
+        options: [
+          "Hypertext Transfer Protocol",
+          "High-Tech Transfer Process",
+          "Hyperlink Text Protocol",
+          "Host Transfer Protocol"
+        ]
       },
       {
         question: "What does GPU stand for?",
         answer: "Graphics Processing Unit",
-        options: ["Graphics Processing Unit", "General Processing Utility", "Graphical Program Unit", "Global Processing Unit"]
+        options: [
+          "Graphics Processing Unit",
+          "General Processing Utility",
+          "Graphical Program Unit",
+          "Global Processing Unit"
+        ]
+      },
+      {
+        question: "What company created the Android operating system?",
+        answer: "Google",
+        options: ["Google", "Apple", "Microsoft", "Samsung"]
+      },
+      {
+        question: "What technology is used to make calls over the internet?",
+        answer: "VoIP",
+        options: ["VoIP", "NFC", "Bluetooth", "RFID"]
       }
     ],
+
     hard: [
       {
         question: "Who is credited with inventing the telephone?",
         answer: "Alexander Graham Bell",
-        options: ["Alexander Graham Bell", "Thomas Edison", "Nikola Tesla", "Samuel Morse"]
+        options: [
+          "Alexander Graham Bell",
+          "Thomas Edison",
+          "Nikola Tesla",
+          "Samuel Morse"
+        ]
       },
       {
         question: "Year first iPhone was released?",
         answer: "2007",
         options: ["2005", "2006", "2007", "2008"]
+      },
+      {
+        question: "What does SSL provide for websites?",
+        answer: "Encryption",
+        options: ["Encryption", "Storage", "Hosting", "Speed Optimization"]
+      },
+      {
+        question: "What does the 'T' stand for in 'IoT'?",
+        answer: "Things",
+        options: ["Technology", "Transmission", "Terminal", "Things"]
+      }
+    ]
+  },
+
+  cars: {
+    easy: [
+      {
+        question: "Which company makes the Corolla?",
+        answer: "Toyota",
+        options: ["Toyota", "Honda", "Nissan", "Kia"]
+      },
+      {
+        question: "Which company uses the Mustang name?",
+        answer: "Ford",
+        options: ["Ford", "Chevrolet", "Dodge", "Jeep"]
+      },
+      {
+        question: "What fuel does a Tesla use?",
+        answer: "Electricity",
+        options: ["Gasoline", "Diesel", "Electricity", "Hybrid"]
+      },
+      {
+        question: "Which country is BMW from?",
+        answer: "Germany",
+        options: ["Germany", "Japan", "USA", "Italy"]
+      }
+    ],
+    medium: [
+      {
+        question: "What does RPM stand for?",
+        answer: "Revolutions Per Minute",
+        options: ["Rounds Per Meter", "Revolutions Per Minute", "Rotations Per Motor", "Rate Per Mile"]
+      },
+      {
+        question: "Which brand produces the 'Civic'?",
+        answer: "Honda",
+        options: ["Honda", "Hyundai", "Toyota", "Mazda"]
+      },
+      {
+        question: "Which car is known as the 'Godzilla'?",
+        answer: "Nissan GT-R",
+        options: ["Nissan GT-R", "Toyota Supra", "Dodge Challenger", "Chevrolet Camaro"]
+      },
+      {
+        question: "Which country manufactures Volvo?",
+        answer: "Sweden",
+        options: ["Sweden", "Germany", "USA", "UK"]
+      }
+    ],
+    hard: [
+      {
+        question: "Which company created the first hybrid car?",
+        answer: "Toyota (Prius)",
+        options: ["Toyota (Prius)", "Honda", "Ford", "Nissan"]
+      },
+      {
+        question: "What is the fastest street-legal production car in 2025?",
+        answer: "Bugatti Chiron Super Sort 300+",
+        options: ["Bugatti Chiron Super Sort 300+", "Koenigsegg Jesko", "Hennessey Venom F5", "Rimac Nevera"]
+      },
+      {
+        question: "What does ABS stand for?",
+        answer: "Anti-lock Braking System",
+        options: ["Anti-lock Braking System", "Advanced Brake Stability", "Automatic Braking System", "Active Balance System"]
+      },
+      {
+        question: "Which engine type has no pistons?",
+        answer: "Rotary engine",
+        options: ["Rotary engine", "V8 engine", "Inline-6 engine", "Boxer engine"]
       }
     ]
   }
 };
+
 
 
 const selectedValues = []
