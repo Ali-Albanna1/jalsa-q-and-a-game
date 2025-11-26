@@ -229,7 +229,9 @@ const gameState = {
     player2Score: 0,
     currentQuestion: null,
     usedQuestions: [], 
-    isGameActive: false
+    isGameActive: false,
+    difficultyQCount: { easy: 0, medium: 0, hard: 0 }
+
 }
 
 
@@ -420,8 +422,10 @@ const getQuestionForRound = () => {
   const difficulty = getSelectedDifficulty()
 
   if (!category) {
+
     alert('Please choose at least one category')
-    return;
+
+    return
   }
 
 
@@ -433,9 +437,13 @@ const getQuestionForRound = () => {
 )
 
 if (availableQuestions.length === 0) {
+
   questionDispEl.textContent = 'no more questions'
+
   disableOpBtn()
+  
   return
+
 }
 
   const randomIndex = Math.floor(Math.random() * availableQuestions.length)
@@ -473,6 +481,8 @@ correctAnswer = gameState.currentQuestion.answer
 if(chosenAnswer === correctAnswer){
 
   event.target.style.backgroundColor = 'green'
+
+  updateScore()
   
 }
 
@@ -481,14 +491,18 @@ else {
    event.target.style.backgroundColor = 'red'
    highlightCorrectOption(correctAnswer)
    
-   
-
 }
-   updateScore()
 
-   disableOpBtn()
 
-   switchTurn()
+   const level = getSelectedDifficulty()
+    gameState.difficultyQCount[level] += 1
+   
+    setTimeout(checkGameOver, 600)
+  
+    disableOpBtn()
+
+   
+    switchTurn()
 
 } 
 
@@ -507,13 +521,14 @@ allOpButtons.forEach(button => {
 }
 
 const disableOpBtn = () => {
+
     option1El.disabled = true
 
-     option2El.disabled = true
+    option2El.disabled = true
 
-      option3El.disabled = true
+    option3El.disabled = true
 
-       option4El.disabled = true
+    option4El.disabled = true
     
 
 }
@@ -547,6 +562,7 @@ const switchTurn = ()  => {
 
 
 const updateScore = () =>  {
+  
   const points = getSelectedDifficultyPoints()
 
   if (gameState.currentPlayer === player1N) {
@@ -563,6 +579,46 @@ const updateScore = () =>  {
 }
 
 
+const endGame = () => {
+
+   let finalmessage = ''
+
+  if (gameState.player1Score > gameState.player2Score ) {
+    
+   finalmessage = `The Winner is : ${player1N} wins with ${gameState.player1Score} points` 
+
+
+  }
+
+  else if (gameState.player1Score < gameState.player2Score ) {
+
+    finalmessage = `The Winner is : ${Player2N} wins with ${gameState.player2Score} points`
+
+  }
+
+  else {
+
+     finalmessage = `It's draw! Both Scored: ${gameState.player1Score} , ${gameState.player2Score} `
+  }
+
+  alert(finalmessage)
+
+  showQBtn.disabled = true
+
+  disableOpBtn()
+
+}
+
+
+const checkGameOver = () => {
+
+  if(gameState.difficultyQCount.easy >= 2 && gameState.difficultyQCount.medium >= 2 && gameState.difficultyQCount.hard >= 2 ){
+
+    endGame()
+
+  }
+
+}
 
 /* event listener---------------------------------------------------*/
 
