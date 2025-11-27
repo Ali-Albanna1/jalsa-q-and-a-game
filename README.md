@@ -26,7 +26,7 @@ The game focuses on practicing:
 - Handling user input
 - Updating the interface based on game progress
 - Using Flexbox for layout and spacing
-- preventing reapiting questions
+- preventing reapeating questions
 
 Players select one or more categories and choose a difficulty level. Each question is randomly selected and never repeated during the game.
 
@@ -36,7 +36,7 @@ Players select one or more categories and choose a difficulty level. Each questi
 
 Players must enter their names and choose at least one category before the game can start.
 
-**Example (real code from the project):**
+**code from the project:**
 
 ```javascript
 if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.length > 0 ) {
