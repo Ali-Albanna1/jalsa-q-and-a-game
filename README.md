@@ -26,6 +26,7 @@ The game focuses on practicing:
 - Handling user input
 - Updating the interface based on game progress
 - Using Flexbox for layout and spacing
+- preventing reapiting questions
 
 Players select one or more categories and choose a difficulty level. Each question is randomly selected and never repeated during the game.
 
@@ -50,7 +51,7 @@ if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.lengt
     formViewEl.style.display = 'none';
     gameViewEl.classList.add("active");
 } else {
-    alert('Please put the names and at least one category to start');
+    showMessageBox('Please put the names and at least one category to start');
 }
 ```
 This section validates input, saves player names, and switches from the landing screen to the game screen.
@@ -106,13 +107,14 @@ if (gameState.currentPlayer === player1N) {
 playerTurnDisp.textContent = gameState.currentPlayer;
 Rounds increase after each answer:
 
-javascript
+```javascript
 gameState.round += 1;
 setTimeout(checkGameOver, 600);
-5. Ending the Game
+```
+### 5. Ending the Game
 After the set number of rounds, the game evaluates the winner:
 
-javascript
+```javascript
 if (gameState.player1Score > gameState.player2Score) {
     finalmessage = `${player1N} wins with ${gameState.player1Score} points`;
 } else if (gameState.player1Score < gameState.player2Score) {
@@ -121,7 +123,7 @@ if (gameState.player1Score > gameState.player2Score) {
     finalmessage = `It's a draw!`;
 }
 
-alert(finalmessage);
+showMessageBox(finalmessage, true);
 ```
 
 ## Technologies Used
@@ -131,13 +133,11 @@ CSS3 – Layout and Flexbox
 
 JavaScript (ES6) – Game logic and DOM manipulation
 
-GitHub Pages – Deployment
+GitHub– Deployment
 
 ## Future Enhancements
 
 Expanded question categories
-
-Additional players
 
 Animations for correct and incorrect answers
 
@@ -147,4 +147,10 @@ Timer-based rounds
 
 Mobile UI improvements
 
-High-score leaderboard
+score leaderboard
+
+## Atrributios
+MDN web docs
+css-trick flexbox guide 
+GA-resources and past exercises
+web3school tutorials and resources 

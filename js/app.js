@@ -462,6 +462,7 @@ const gameViewEl = document.querySelector('#game-view')
 
 const landingScreenEl = document.querySelector("#landing-screen")
 
+const messageBox = document.querySelector("#message-box")
 
 /* Functions ---------------------------------------------------*/
 
@@ -502,7 +503,7 @@ if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.lengt
 else {
 
    
-  alert('Please put the names and at least one category to satrt')
+  showMessageBox('Please put the names and at least one category to start')
 
 }
 }
@@ -574,12 +575,12 @@ const getSelectedDifficultyPoints = () => {
 const getQuestionForRound = () => {
 
     if (gameState.round > gameState.totalRounds) {
-    alert("Game is over! Please restart to play again.")
+    showMessageBox("Game is over! Please restart to play again.")
     return
     }
 
   if (!isDifficultySelected()){
-    alert('Please select difficullty level before showing question')
+    showMessageBox('Please select difficullty level before showing question')
     return
     }
 
@@ -592,7 +593,7 @@ const getQuestionForRound = () => {
 
   if (!category) {
 
-    alert('Please choose at least one category')
+    showMessageBox('Please choose at least one category')
 
     return
   }
@@ -600,7 +601,6 @@ const getQuestionForRound = () => {
 
   const questionList = gameData[category][difficulty]
 
-  // filter alredy used questions 
   const availableQuestions = questionList.filter(q =>
   !gameState.usedQuestions[category].includes(q.question)
 )
@@ -637,8 +637,6 @@ if (availableQuestions.length === 0) {
 
   
 }
-
-// the full question with the answer and options is stored in the gamestate.currentQuestion
 
 
 const handleAnswerOptions = (event) => {
@@ -770,7 +768,7 @@ const endGame = () => {
      finalmessage = `It's draw! Both Scored: ${gameState.player1Score} , ${gameState.player2Score} `
   }
 
-  alert(finalmessage)
+  showMessageBox(finalmessage, true)
 
   showQBtn.disabled = true
 
@@ -824,6 +822,21 @@ const resetGame = () => {
   disableOpBtn()
 
   gameState.isGameActive = true
+
+}
+
+
+const showMessageBox = (text, persistent=false) => {
+
+  messageBox.textContent = text
+
+  messageBox.style.display = "block"
+
+  if(!persistent) {
+
+  setTimeout(() => {messageBox.style.display = "none"}, 5000)
+
+  }
 
 }
 
