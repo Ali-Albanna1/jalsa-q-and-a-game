@@ -467,8 +467,6 @@ const gameViewEl = document.querySelector('#game-view')
 
 const startForm = () => {
 
-  
-    
 if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.length > 0 ) {
 
     player1N = player1Name.value
@@ -492,8 +490,7 @@ if (player1Name.value !== '' && player2Name.value !== '' && selectedValues.lengt
 
     questionDispEl.textContent = '?'
 
-    resetOptions()
-
+    
 
     formViewEl.style.display = 'none' 
 
@@ -823,6 +820,8 @@ const resetGame = () => {
   player2ScoreDisp.textContent = 0
   
   showQBtn.disabled = false
+
+  disableOpBtn()
 
   gameState.isGameActive = true
 

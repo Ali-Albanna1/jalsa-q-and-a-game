@@ -5,6 +5,14 @@
 }
 
 body {
+  display: flex;  
+
+  flex-direction:column;
+
+  justify-content: center;
+
+  align-items: center;
+
   font-family: Helvetica, Tahoma, Verdana, sans-serif;
 }
 
@@ -12,9 +20,56 @@ h1 {
   text-align: center;
 }
 
+.landing-screen{
+ display: flex;
 
+ height: 100vh; 
+
+ justify-content: center;
+
+ align-items:center ;
+}
+
+.start-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    width: 300px;
+    
+}
 
 
 .game-view{
+    
     display:none;
+   
+}
+
+.options-wrapper {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    border: 1px solid black;
+
+    padding: 10px;
+
+}
+
+.options-wrapper button {
+
+    padding: 20px;
+
+    background-color: lightgray;
+
+    border: none;
+
+    width: 48%;
+    
+    margin-bottom: 10px;
+
 }

@@ -22,6 +22,7 @@
 
 <body>
 
+  <section id="landing-screen">
     <div id="start-form" class="start-form">
 
     <input id="player1-input" type="text" placeholder="Player 1 name" >
@@ -47,16 +48,16 @@
    <button id="start-btn" type="button">Play</button>
 
 </div>
+</section>
 
 
-
-<div id="game-view" class="game-view" >
+<section id="game-view" class="game-view" >
 
 <button type="button" ><i class="material-symbols-outlined">exit_to_app</i></button>
 
 <p>Turn: <span id="player-turn"></span></p>
 
-<section class="selection-wrapper">
+<div class="selection-wrapper">
 
   <label for="selected-categories">Choosen Catagories : </label>
 
@@ -66,9 +67,9 @@
 
    </select>
   
-</section>
+  </div>
 
-<section class="Levels">
+<div class="Levels">
   
   <label>Please select your preferred difficulty level:</label>
 
@@ -82,18 +83,18 @@
   <label for="dewey">Hard</label>
   
   
-</section>
+</div>
 
-<section class="question-wrapper">
+<div class="question-wrapper">
 
 <button id="show-quesbtn" title="show-question-button">Show Question</button>
 
 <p id="question"> ?</p>
-</section>
+</div>
 
 
 
-<section class="options-wrapper">
+<div class="options-wrapper">
     <button id="option1">option1</button>
     
     <button id="option2">option2</button>
@@ -102,21 +103,19 @@
 
     <button id="option4">option4</button>
 
-</section>
+</div>
 
-<section class="names-scores">
+<div class="names-scores">
 
   <p><span id="p1-name">Name</span> Score: <span id="p1-score"> 000</span></p>
   
   <p><span id="p2-name">Name</span> Score: <span id="p2-score"> 000</span></p>
 
-  
+
+</div>
 
 
 </section>
-
-
-</div>
 
 </body>
 </html>
